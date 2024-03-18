@@ -1,6 +1,5 @@
 import { useState, useContext } from "react";
 import FormInput from "../form-input/form-input.component";
-import { UserContext } from "../../Contexts/user.context";
 import {
   signInWithGooglePopup,
   createUserDocumentFromAuth,
@@ -65,7 +64,7 @@ const SignInForm = () => {
           onChange={handleChange}
           name="email"
           value={email}
-          autocomplete="off"
+          autoComplete="off"
         />
 
         <FormInput
@@ -75,7 +74,7 @@ const SignInForm = () => {
           onChange={handleChange}
           name="Password"
           value={Password}
-          autocomplete="off"
+          autoComplete="off"
         />
 
         <div className="buttons-container">

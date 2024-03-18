@@ -4,7 +4,7 @@ import {
   createAuthUserwithEmailAndpassword,
   createUserDocumentFromAuth,
 } from "../../utility/Firebase/firebase.utils";
-imp
+
 const defaultformFields = {
   displayName: "",
   email: "",
@@ -66,7 +66,7 @@ const SignUpForm = () => {
           onChange={handleChange}
           name="displayName"
           value={displayName}
-          autocomplete="off"
+          autoComplete="off"
         />
 
         <FormInput
@@ -76,7 +76,7 @@ const SignUpForm = () => {
           onChange={handleChange}
           name="email"
           value={email}
-          autocomplete="off"
+          autoComplete="off"
         />
 
         <FormInput
@@ -86,7 +86,7 @@ const SignUpForm = () => {
           onChange={handleChange}
           name="Password"
           value={Password}
-          autocomplete="off"
+          autoComplete="off"
         />
 
         <FormInput
@@ -96,7 +96,7 @@ const SignUpForm = () => {
           onChange={handleChange}
           name="confirmPassword"
           value={confirmPassword}
-          autocomplete="off"
+          autoComplete="off"
         />
 
         <Button type="submit">Sign Up</Button>
