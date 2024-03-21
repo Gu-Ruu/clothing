@@ -5,6 +5,7 @@ import { ReactComponent as CrwnLogo } from "../../Assets/crown.svg";
 import "./navigation.styles.scss";
 import { signOutUser } from "../../utility/Firebase/firebase.utils";
 import { UserContext } from "../../Contexts/user.context";
+
 const Navigation = () => {
   const { currentUser } = useContext(UserContext);
   return (
