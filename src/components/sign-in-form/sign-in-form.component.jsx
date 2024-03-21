@@ -1,10 +1,11 @@
-import { useState, useContext } from "react";
+import { useState } from "react";
 import FormInput from "../form-input/form-input.component";
 import {
   signInWithGooglePopup,
   createUserDocumentFromAuth,
   signInAuthuserWithEmailAndPassword,
 } from "../../utility/Firebase/firebase.utils";
+
 const defaultformFields = {
   email: "",
   Password: "",
@@ -15,24 +16,18 @@ const SignInForm = () => {
   const [formFields, setFormFields] = useState(defaultformFields);
   const { email, Password } = formFields;
 
-  
-
   const resetFormfields = () => {
     setFormFields(defaultformFields);
   };
 
   const signInWithGoogle = async () => {
-    const { user } = await signInWithGooglePopup();
-    await createUserDocumentFromAuth(user);
+    await signInWithGooglePopup();
   };
   const handleSubmit = async (event) => {
     event.preventDefault();
 
     try {
-      const { user } = await signInAuthuserWithEmailAndPassword(
-        email,
-        Password
-      );
+      await signInAuthuserWithEmailAndPassword(email, Password);
       resetFormfields();
     } catch (error) {
       switch (error.code) {
@@ -51,6 +46,7 @@ const SignInForm = () => {
   const handleChange = (event) => {
     const { name, value } = event.target;
     setFormFields({ ...formFields, [name]: value });
+    console.log("handle change");
   };
   return (
     <div className="sign-up-container">
@@ -64,7 +60,7 @@ const SignInForm = () => {
           onChange={handleChange}
           name="email"
           value={email}
-          autoComplete="off"
+          autoComplete="on"
         />
 
         <FormInput
@@ -74,7 +70,7 @@ const SignInForm = () => {
           onChange={handleChange}
           name="Password"
           value={Password}
-          autoComplete="off"
+          autoComplete="on"
         />
 
         <div className="buttons-container">
