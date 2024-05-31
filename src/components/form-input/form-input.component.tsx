@@ -9,7 +9,7 @@ const FormInput: FC<FormInputProps> = ({ label, ...otherProps }) => {
     <Group>
       <Input {...otherProps} />
       {label && (
-        <FormInputLabel
+        <FormInputLabel 
           shrink={Boolean(
             otherProps.value &&
               typeof otherProps.value === 'string' &&
